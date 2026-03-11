@@ -1,5 +1,7 @@
+import { levenshteinDistance } from './levenshteinDistance';
+
 // Helper function to calculate similarity score (0-1)
-function calculateSimilarity(input, question) {
+function calculateSimilarity(input: string, question: string): number {
     const inputLower = input.toLowerCase().trim();
     const questionLower = question.toLowerCase().trim();
 
@@ -21,3 +23,5 @@ function calculateSimilarity(input, question) {
     // Combined score (weighted average)
     return (wordSimilarity * 0.6) + (levenshteinSim * 0.4);
 }
+
+export { calculateSimilarity };

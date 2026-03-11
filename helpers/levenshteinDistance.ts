@@ -1,4 +1,4 @@
-function levenshteinDistance(str1, str2) {
+function levenshteinDistance(str1: string, str2: string): number {
     const m = str1.length;
     const n = str2.length;
     const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
@@ -22,3 +22,5 @@ function levenshteinDistance(str1, str2) {
 
     return dp[m][n];
 }
+
+export { levenshteinDistance };
